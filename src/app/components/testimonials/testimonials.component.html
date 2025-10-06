@@ -1,0 +1,27 @@
+<!-- Testimonials Section -->
+<section class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+  <div class="container">
+    <div class="text-center mb-16">
+      <h5 class="text-[#404a3d] dark:text-[#eddd5e] uppercase tracking-wider font-semibold mb-2">Testimonial</h5>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">What Our Clients Say About Our Services</h2>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-8">
+      <div *ngFor="let testimonial of testimonials" class="bg-gray-50 dark:bg-gray-800 rounded-lg p-8 relative transition-colors duration-300">
+        <div class="flex items-start gap-4 mb-6">
+          <img [src]="testimonial.image" [alt]="testimonial.name" class="w-16 h-16 rounded-full object-cover">
+          <div>
+            <h5 class="text-lg font-semibold text-gray-800 dark:text-white">{{testimonial.name}}</h5>
+            <p class="text-[#404a3d] dark:text-[#eddd5e] font-medium">{{testimonial.profession}}</p>
+          </div>
+        </div>
+        <div class="flex mb-4">
+          <i *ngFor="let star of [1,2,3,4,5]" class="pi pi-star-fill text-yellow-400 text-sm"></i>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{testimonial.review}}</p>
+        <div class="absolute top-6 right-6">
+          <i class="pi pi-quote-right text-4xl text-gray-200 dark:text-gray-600"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

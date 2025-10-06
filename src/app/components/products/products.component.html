@@ -1,0 +1,33 @@
+<!-- Products Section -->
+<section class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+  <div class="container">
+    <div class="text-center mb-16">
+      <h5 class="text-[#404a3d] dark:text-[#eddd5e] uppercase tracking-wider font-semibold mb-2">Our Products</h5>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Our Dairy Products For Healthy Living</h2>
+    </div>
+    <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-6">
+      <div *ngFor="let product of products" class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
+        <div class="relative overflow-hidden">
+          <img [src]="product.image" [alt]="product.name" class="w-full h-48 object-cover group-hover:scale-110 transition-transform">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+            <p-button icon="pi pi-link" 
+                      styleClass="p-button-rounded p-button-sm"
+                      class="bg-[#eddd5e] text-black hover:bg-[#404a3d] hover:text-white border-none rounded-full">
+            </p-button>
+            <p-button icon="pi pi-shopping-cart" 
+                      styleClass="p-button-rounded p-button-sm"
+                      class="bg-[#eddd5e] text-black hover:bg-[#404a3d] hover:text-white border-none rounded-full">
+            </p-button>
+          </div>
+        </div>
+        <div class="p-4 text-center">
+          <h5 class="text-lg font-semibold mb-2 text-gray-800 dark:text-white">{{product.name}}</h5>
+          <div class="flex items-center justify-center gap-2">
+            <span class="text-[#404a3d] dark:text-[#eddd5e] font-bold">$19.00</span>
+            <span class="text-gray-400 dark:text-gray-500 line-through">$29.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+<!-- Services Section -->
+<section class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+  <div class="container">
+    <div class="text-center mb-16">
+      <h5 class="text-[#404a3d] dark:text-[#eddd5e] uppercase tracking-wider font-semibold mb-2">Our Services</h5>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Services That We Offer For Entrepreneurs</h2>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+      <div *ngFor="let service of services" class="relative rounded-lg overflow-hidden hover:shadow-xl transition-shadow group h-96">
+        <img [src]="service.image" [alt]="service.title" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="absolute top-6 left-6">
+          <img [src]="service.image" [alt]="service.title" class="w-16 h-16 rounded-full border-4 border-white object-cover">
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+          <h5 class="text-xl font-bold mb-2">{{service.title}}</h5>
+          <p class="text-gray-200 text-sm mb-3 leading-relaxed">{{service.description}}</p>
+          <p-button icon="pi pi-chevron-right" 
+                    styleClass="p-button-rounded p-button-outlined p-button-sm"
+                    class="text-white border-white hover:bg-white hover:text-gray-800">
+          </p-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

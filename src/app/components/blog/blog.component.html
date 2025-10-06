@@ -1,0 +1,42 @@
+<!-- Blog Section -->
+<section class="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+  <div class="container">
+    <div class="text-center mb-16">
+      <h5 class="text-[#404a3d] dark:text-[#eddd5e] uppercase tracking-wider font-semibold mb-2">Latest Blog</h5>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Latest Articles From Our Blog Post</h2>
+    </div>
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+      <div *ngFor="let post of blogPosts" class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+        <div class="relative">
+          <img [src]="post.image" [alt]="post.title" class="w-full h-48 object-cover">
+          <div class="absolute top-4 left-4">
+            <div class="bg-[#404a3d] dark:bg-[#eddd5e] text-white dark:text-gray-900 px-3 py-1 rounded text-sm font-medium">
+              {{post.date}}
+            </div>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-3">
+            <span class="flex items-center gap-1">
+              <i class="pi pi-user"></i>
+              {{post.author}}
+            </span>
+            <span class="flex items-center gap-1">
+              <i class="pi pi-calendar"></i>
+              {{post.category}}
+            </span>
+          </div>
+          <h5 class="text-xl font-semibold mb-3 text-gray-800 dark:text-white hover:text-[#404a3d] dark:hover:text-[#eddd5e] transition-colors">
+            <a href="#">{{post.title}}</a>
+          </h5>
+          <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{{post.excerpt}}</p>
+          <p-button label="Read More" 
+                    icon="pi pi-arrow-right" 
+                    styleClass="p-button-text p-button-sm"
+                    class="text-[#404a3d] dark:text-[#eddd5e] hover:bg-[#404a3d] hover:text-white dark:hover:bg-[#eddd5e] dark:hover:text-gray-900">
+          </p-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+.hero {
+  &__title {
+    @apply text-5xl font-bold mb-6;
+  }
+
+  &__subtitle {
+    @apply text-xl mb-8 max-w-2xl mx-auto;
+  }
+}
+
+.features {
+  &__title {
+    @apply text-3xl font-bold text-center mb-12 text-gray-800;
+  }
+
+  &__card {
+    @apply h-full;
+    
+    .feature-icon {
+      @apply text-4xl text-blue-600;
+    }
+  }
+}
+
+.products-preview {
+  &__item {
+    @apply bg-gray-50 rounded-lg p-6 text-center hover:shadow-lg transition-shadow;
+    
+    .product-icon {
+      @apply text-3xl text-blue-600 mb-4;
+    }
+  }
+}
+
+// Carousel arrow styles
+::ng-deep .p-carousel {
+  .p-carousel-prev,
+  .p-carousel-next {
+    background: #5b8c51  !important;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3rem;
+    border: none !important;
+    color: white !important;
+    z-index: 80!important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-60%)!important;
+    
+    &:hover {
+      background: #5b8c51  !important
+    }
+  }
+  
+  .p-carousel-prev {
+    left: 20px !important;
+  }
+  
+  .p-carousel-next {
+    right: 20px  !important          
+  }
+}    

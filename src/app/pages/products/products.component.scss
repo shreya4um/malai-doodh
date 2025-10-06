@@ -1,0 +1,49 @@
+.products {
+  &__title {
+    @apply text-4xl font-bold mb-4 text-gray-800;
+  }
+
+  &__subtitle {
+    @apply text-xl text-gray-600;
+  }
+
+  &__grid {
+    @apply grid md:grid-cols-2 lg:grid-cols-3 gap-8;
+  }
+}
+
+.product-card {
+  @apply h-full;
+
+  &__image {
+    @apply bg-gray-200 h-48 flex items-center justify-center;
+    
+    i {
+      @apply text-6xl text-blue-600;
+    }
+  }
+
+  &__content {
+    @apply space-y-4;
+  }
+
+  &__header {
+    @apply flex justify-between items-start;
+  }
+
+  &__title {
+    @apply text-xl font-semibold text-gray-800;
+  }
+
+  &__description {
+    @apply text-gray-600;
+  }
+
+  &__footer {
+    @apply flex justify-between items-center;
+  }
+
+  &__price {
+    @apply text-2xl font-bold text-blue-600;
+  }
+}

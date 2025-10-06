@@ -1,0 +1,32 @@
+
+# Angular and Node.js .gitignore
+
+# Dependencies
+node_modules/
+jspm_packages/
+
+# Angular build and cache directories
+.angular/cache/
+dist/
+tmp/
+out-tsc/
+
+# Environment files
+src/environments/environment*.ts
+
+# IDE and editor folders
+.vscode/
+.idea/
+*.swp
+
+# Logs and debug files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Misc
+*.tgz

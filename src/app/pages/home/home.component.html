@@ -1,0 +1,92 @@
+<div class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+  <!-- Carousel Hero Section -->
+  <p-carousel 
+    [value]="carousel" 
+    [numVisible]="1" 
+    [numScroll]="1" 
+    [circular]="true" 
+    [autoplayInterval]="4000"
+    [showIndicators]="true"
+    [showNavigators]="true"
+    styleClass="relative">
+
+    <ng-template let-item pTemplate="item">
+      <section class="relative w-full h-[90vh] overflow-hidden">
+        <!-- Background Image -->
+        <img [src]="item.img" 
+             [alt]="item.title" 
+             class="absolute inset-0 w-full h-full object-cover">
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 flex flex-col justify-center h-full container" [ngClass]="item.align">
+          <div class="max-w-2xl" [ngClass]="{'ml-auto': item.align === 'text-right'}">
+            <h5 class="text-[#eddd5e] uppercase tracking-widest mb-4 text-lg font-semibold">
+              {{ item.subtitle }}
+            </h5>
+            <h1 class="text-white text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              {{ item.title }}
+            </h1>
+            <p class="text-white text-lg mb-8 leading-relaxed">
+              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.
+            </p>
+            <p-button label="Explore More" 
+                      styleClass="p-button-lg"
+                      class="bg-[#eddd5e] text-black hover:bg-[#d4c653] border-none px-8 py-3 text-lg font-semibold rounded-full shadow-lg"
+                      routerLink="/products"/>
+          </div>
+        </div>
+      </section>
+    </ng-template>
+  </p-carousel>
+<app-about></app-about>
+<!-- Banner Section -->
+<div class="relative bg-cover bg-center py-20 my-16" [style.background-image]="'url(' + bannerSection.backgroundImage + ')'">
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  <div class="container relative z-10">
+    <div class="grid lg:grid-cols-2 gap-12">
+      <div *ngFor="let item of bannerSection.items" class="flex items-center gap-6">
+        <img [src]="item.image" [alt]="item.title" class="w-24 h-24 rounded-lg object-cover">
+        <div>
+          <h2 class="text-xl font-bold text-white dark:text-gray-100 mb-2">{{item.title}}</h2>
+          <p class="text-white dark:text-gray-200 text-sm mb-3">{{item.description}}</p>
+          <p-button [label]="item.buttonText" 
+                    styleClass="p-button-secondary"
+                    size="small"
+                    class="bg-[#eddd5e] text-black hover:bg-[#d4c653] border-none rounded-full">
+          </p-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-services [services]="services"></app-services>
+
+<!-- Gallery Section -->
+<section class="py-0">
+  <div class="w-full">
+    <div class="grid lg:grid-cols-4 md:grid-cols-2">
+      <div *ngFor="let column of galleryColumns" class="space-y-0">
+        <img *ngFor="let image of column" 
+             [src]="image.src" 
+             [alt]="image.alt" 
+             class="w-full h-48 object-cover hover:scale-105 transition-transform cursor-pointer">
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-products [products]="products"></app-products>
+
+<app-team [teamMembers]="teamMembers"></app-team>
+
+<app-testimonials [testimonials]="testimonials"></app-testimonials>
+
+<app-blog [blogPosts]="blogPosts"></app-blog>
+
+<app-footer></app-footer>
+</div>

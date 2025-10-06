@@ -1,0 +1,100 @@
+<div class="min-h-screen bg-gray-50 dark:bg-gray-900 py-16">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-4 text-gray-800 dark:text-gray-200">Contact Us</h1>
+      <p class="text-xl text-gray-600 dark:text-gray-400">
+        Get in touch with us for fresh dairy products and inquiries
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- Contact Form -->
+      <p-card>
+        <ng-template pTemplate="header">
+          <div class="p-6">
+            <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-200">Send us a Message</h2>
+          </div>
+        </ng-template>
+        
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
+            <input pInputText 
+                   formControlName="name"
+                   class="w-full"
+                   placeholder="Your full name" />
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+            <input pInputText 
+                   formControlName="email"
+                   type="email"
+                   class="w-full"
+                   placeholder="your@email.com" />
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+            <input pInputText 
+                   formControlName="subject"
+                   class="w-full"
+                   placeholder="Message subject" />
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+            <textarea pInputTextarea 
+                      formControlName="message"
+                      rows="5"
+                      class="w-full"
+                      placeholder="Your message...">
+            </textarea>
+          </div>
+          
+          <p-button label="Send Message" 
+                    type="submit"
+                    [disabled]="contactForm.invalid"
+                    styleClass="w-full">
+          </p-button>
+        </form>
+      </p-card>
+
+      <!-- Contact Information -->
+      <div class="space-y-8">
+        <p-card>
+          <div class="text-center">
+            <i class="pi pi-map-marker text-3xl text-primary-600 dark:text-primary-400 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Visit Our Farm</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              123 Dairy Farm Road<br>
+              Countryside, ST 12345
+            </p>
+          </div>
+        </p-card>
+
+        <p-card>
+          <div class="text-center">
+            <i class="pi pi-phone text-3xl text-primary-600 dark:text-primary-400 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Call Us</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              +1 (555) 123-4567<br>
+              Mon-Fri: 8AM-6PM
+            </p>
+          </div>
+        </p-card>
+
+        <p-card>
+          <div class="text-center">
+            <i class="pi pi-envelope text-3xl text-primary-600 dark:text-primary-400 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Email Us</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              info&#64;milkydairy.com<br>
+              orders&#64;milkydairy.com
+            </p>
+          </div>
+        </p-card>
+      </div>
+    </div>
+  </div>
+</div>

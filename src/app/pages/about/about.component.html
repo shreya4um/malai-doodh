@@ -1,0 +1,90 @@
+<section class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+  <div class="container">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Left Images with Experience Badge -->
+      <div class="relative">
+        <!-- Experience Badge -->
+        <div class="absolute -top-6 -left-6 bg-[#eddd5e] text-gray-900 flex flex-col items-center justify-center w-32 h-32 rounded-lg shadow-lg z-10">
+          <span class="text-3xl font-bold">{{aboutData.experienceYears}}</span>
+          <span class="text-sm">Years Experience</span>
+        </div>
+
+        <!-- Top Image -->
+        <div class="flex justify-end mb-4">
+          <img [src]="aboutData.images.topImage" alt="About Farm" class="rounded-lg shadow-md w-1/2 h-32 object-cover">
+        </div>
+        
+        <!-- Bottom Two Images -->
+        <div class="grid grid-cols-2 gap-4">
+          <img [src]="aboutData.images.bottomLeft" alt="About Cows" class="rounded-lg shadow-md w-full h-32 object-cover">
+          <img [src]="aboutData.images.bottomRight" alt="About Dairy" class="rounded-lg shadow-md w-full h-32 object-cover">
+        </div>
+      </div>
+
+      <!-- Right Content -->
+      <div>
+        <h5 class="text-[#404a3d] dark:text-[#eddd5e] uppercase tracking-wider font-semibold mb-2">
+          {{aboutData.subtitle}}
+        </h5>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4 leading-snug">
+          {{aboutData.title}}
+        </h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+          {{aboutData.description}}
+        </p>
+
+        <!-- Features -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+          <div *ngFor="let feature of aboutData.features" class="flex items-start space-x-3">
+            <i [class]="feature.icon" class="text-[#404a3d] dark:text-[#eddd5e] text-2xl"></i>
+            <div>
+              <h4 class="font-semibold text-gray-800 dark:text-white">{{feature.title}}</h4>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">{{feature.description}}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Button -->
+        <a href="#" class="bg-[#eddd5e] text-black px-6 py-3 rounded-full font-medium hover:bg-[#404a3d] hover:text-white transition-colors duration-300">
+          {{aboutData.buttonText}}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+  <div class="container">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Content -->
+      <div>
+        <div class="text-center mb-16">
+          <h5 class="text-[#404a3d] dark:text-[#eddd5e] uppercase tracking-wider font-semibold mb-2">{{whyChooseUs.subtitle}}</h5>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">{{whyChooseUs.title}}</h2>
+          <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">{{whyChooseUs.description}}</p>
+        </div>
+    
+        <ul class="space-y-4 mb-8">
+          <li *ngFor="let reason of whyChooseUs.reasons" class="flex items-center gap-3">
+            <i class="pi pi-check text-[#404a3d] dark:text-[#eddd5e] text-xl"></i>
+            <span class="text-gray-700 dark:text-gray-300">{{reason}}</span>
+          </li>
+        </ul>
+        <p-button [label]="whyChooseUs.buttonText" 
+                  styleClass="p-button-lg"
+                  class="bg-[#eddd5e] text-gray-900 hover:bg-[#404a3d] hover:text-white border-none px-8 py-3 rounded-full transition-colors duration-300">
+        </p-button>
+      </div>
+
+      <!-- Right Stats Grid -->
+      <div class="grid grid-cols-2 gap-0 rounded-lg overflow-hidden shadow-lg">
+        <div *ngFor="let stat of statsData" [ngClass]="stat.bgClass" class="p-8 text-center">
+          <img [src]="stat.icon" [alt]="stat.label">
+          <h3 class="text-4xl font-bold mb-2">{{stat.value}}</h3>
+          <span [ngClass]="stat.textClass" class="text-lg font-semibold">{{stat.label}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
